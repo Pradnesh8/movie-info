@@ -6,8 +6,8 @@ require('dotenv/config');
 const movieRoute = require('./routes/api/movies');
 const userRoute = require('./routes/api/users');
 const authRoute = require('./routes/api/auth');
-const app = express();
 
+const app = express();
 app.use(express.json());
 
 //Routes
@@ -25,10 +25,10 @@ mongoose.connect(
 //Serve static assets if in production
 if(process.env.NODE_ENV === 'production'){
     //set static folder
-    app.use(express.static('client/build'));
+    app.use(express.static('movie-info-app/build'));
 
     app.get("*", (req,res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'movie-info-app', 'build', 'index.html'));
     });
 }
 

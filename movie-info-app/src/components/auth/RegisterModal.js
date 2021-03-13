@@ -129,6 +129,7 @@ class RegisterModal extends Component{
 
 }
 
+
 const mapStateToProps = (state) => ({
     // Values are coming from Reducers
     isAuthenticated: state.auth.isAuthenticated,

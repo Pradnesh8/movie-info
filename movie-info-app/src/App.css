@@ -1,0 +1,112 @@
+body {
+  background: #C6FFDD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.App {
+  text-align: center;
+}
+
+#search-img {
+  height: 350px;
+  width: 100%;
+  object-fit: fill;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-image: url("./search.svg");
+}
+
+#search-results {
+  margin-top: 10px;
+}
+
+#err {
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+#info{
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+#del{
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.glyphicon {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 30px;
+  /*
+  color:red;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  */
+  color: #e9ecef;
+  cursor: pointer;
+}
+
+.glyphicon-delete {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 30px;
+  /*
+  color:red;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  */
+  color: #ff0000ba;
+  cursor: pointer;
+}
+
+.glyphicon-added {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 30px;
+  color: red;
+  cursor: pointer;
+}
+
+.buttons {
+  margin-bottom: 20px;
+}
+
+.list-group {
+  opacity: 0.8;
+}
+
+#movieList{
+  margin-top: 20px;
+}
+
+
+#movies img, #movie img{
+  width:100%;
+}
+
+@media(min-width:960px){
+  #movies .col-md-3 .well{
+    height: 390px;
+    margin-bottom: 50px;
+  }
+
+  #movies .col-md-3 img{
+    height:320px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  #movies .col-md-3 .well{
+    margin-bottom: 10px;
+  }
+}

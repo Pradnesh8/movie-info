@@ -19,7 +19,7 @@ class AppNavbar extends Component{
     state= {
         isOpen: false
     }
-    
+
     static propTypes = {
         auth: PropTypes.object.isRequired
     }
@@ -30,15 +30,24 @@ class AppNavbar extends Component{
         });
     }
 
+    watchlist= () =>{
+        window.location.replace("/watchlist");
+    }
+
     render(){
         const { isAuthenticated, user } = this.props.auth;
-
+        //console.log(isAuthenticated);
         const authLinks = (
             <Fragment>
                 <NavItem>
                     <span className="navbar-text mr-3">
                         <strong>{ user ? `Welcome ${user.name}` : '' }</strong>
                     </span>
+                </NavItem>
+                <NavItem>
+                    <NavLink onClick={ this.watchlist } href="#">
+                        Watchlist
+                    </NavLink>
                 </NavItem>
                 <NavItem>
                     <Logout />
@@ -55,13 +64,12 @@ class AppNavbar extends Component{
                 </NavItem>
             </Fragment>
         );
-
         return(
             <div>
              <Navbar color='dark' dark expand="sm" className="mb-5">
                 <Container>
                     <NavbarBrand href='/'> 
-                        Movies List
+                        Movies.info
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>

@@ -12,7 +12,7 @@ class LoginModal extends Component{
         password: '',
         msg: null
     }
-
+    
     static propTypes = {
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
@@ -46,7 +46,6 @@ class LoginModal extends Component{
             modal: !this.state.modal
         });
     }
-
     onChange= e =>{
         this.setState({ [e.target.name]: e.target.value });
     }

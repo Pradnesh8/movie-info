@@ -8,10 +8,14 @@ export class Logout extends Component {
     static propTypes = {
         logout: PropTypes.func.isRequired
     };
+    logout=()=>{
+        this.props.logout();
+        window.location.replace("/"); 
+    }
     render() {
         return(
             <Fragment>
-                <NavLink onClick={ this.props.logout } href="#">
+                <NavLink onClick={this.logout} href="#">
                     Logout
                 </NavLink>
             </Fragment>
