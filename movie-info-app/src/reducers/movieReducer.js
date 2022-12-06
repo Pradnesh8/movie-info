@@ -1,15 +1,18 @@
-import { GET_MOVIES, ADD_MOVIE, DELETE_MOVIE, MOVIES_LOADING, GET_DETAILS, GET_RECOMMENDATIONS, RECOMMENDATIONS_LOADING } from "../actions/types";
+import {
+    GET_MOVIES, ADD_MOVIE, DELETE_MOVIE, MOVIES_LOADING, GET_DETAILS,
+    // GET_RECOMMENDATIONS, RECOMMENDATIONS_LOADING
+} from "../actions/types";
 
 const initialState = {
     movies: [],
     movieDetails: [],
-    RecommendedMoviesList: [],
+    // RecommendedMoviesList: [],
     loading: false,
-    recommendations_loading: false
+    // recommendations_loading: false
 }
 
-export default function(state = initialState, action){
-    switch(action.type){
+export default function (state = initialState, action) {
+    switch (action.type) {
         case GET_DETAILS:
             return {
                 ...state,
@@ -29,16 +32,16 @@ export default function(state = initialState, action){
                 movies: action.payload,
                 loading: false
             };
-        case GET_RECOMMENDATIONS:
-            return {
-                ...state,
-                RecommendedMoviesList: action.payload,
-                recommendations_loading: false
-            };
+        // case GET_RECOMMENDATIONS:
+        //     return {
+        //         ...state,
+        //         RecommendedMoviesList: action.payload,
+        //         recommendations_loading: false
+        //     };
         case DELETE_MOVIE:
             return {
                 ...state,
-                movies: state.movies.filter(movies=> movies.movie_id !== action.payload)
+                movies: state.movies.filter(movies => movies.movie_id !== action.payload)
             };
         case ADD_MOVIE:
             return {
@@ -50,11 +53,11 @@ export default function(state = initialState, action){
                 ...state,
                 loading: true
             };
-        case RECOMMENDATIONS_LOADING:
-            return {
-                ...state,
-                recommendations_loading: true
-            };    
+        // case RECOMMENDATIONS_LOADING:
+        //     return {
+        //         ...state,
+        //         recommendations_loading: true
+        //     };
         default:
             return state;
     }

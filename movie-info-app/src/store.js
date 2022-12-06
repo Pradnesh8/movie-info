@@ -10,10 +10,10 @@ const devTools =
   process.env.NODE_ENV === "production"
     ? applyMiddleware(...middleware)
     : compose(
-        applyMiddleware(...middleware),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-        );
+      applyMiddleware(...middleware),
+      // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    );
 
-const store = createStore( rootReducer, initialState ,devTools);
+const store = createStore(rootReducer, initialState, devTools);
 
 export default store;
